@@ -1,13 +1,16 @@
+import java.sql.SQLException;
+
 import commandline.TopTrumpsCLIApplication;
 
-import online.TopTrumpsOnlineApplication;
+//import online.TopTrumpsOnlineApplication;
 
 
 
 public class TopTrumps {
 
-	/** This is the main class for the TopTrumps Applications */
-	public static void main(String[] args) {
+	/** This is the main class for the TopTrumps Applications 
+	 * @throws SQLException */
+	public static void main(String[] args) throws SQLException {
 		
 		System.out.println("--------------------");
 		System.out.println("--- Top Trumps   ---");
@@ -27,18 +30,18 @@ public class TopTrumps {
 			
 		}
 		
-		// We cannot run online and command line mode simultaniously
+		// We cannot run online and command line mode simultaneously
 		if (onlineMode && commandLineMode) {
 			System.out.println("ERROR: Both online and command line mode selected, select one or the other!");
 			System.exit(0);
 		}
 		
 		// Start the appropriate application
-		if (onlineMode) {
-			// Start the online application
-			String[] commandArgs = {"server", "TopTrumps.json"};
-			TopTrumpsOnlineApplication.main(commandArgs);
-		} else if (commandLineMode) {
+//		if (onlineMode) {
+////			 Start the online application
+//			String[] commandArgs = {"server", "TopTrumps.json"};
+//			TopTrumpsOnlineApplication.main(commandArgs);
+		if (commandLineMode) {
 			// Start the command line application
 			String[] commandArgs = {String.valueOf(printTestLog)};
 			TopTrumpsCLIApplication.main(commandArgs);
