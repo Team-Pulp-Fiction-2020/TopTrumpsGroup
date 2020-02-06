@@ -2,36 +2,38 @@ package commandline;
 import java.util.ArrayList;
 
 public class Player {
-	
-//	attributes of the player class
-	protected String playerStatus;
-
-	public ArrayList<Card> getCardsArray() {
+//	private String name;
+	protected ArrayList<Deck> cardsArray = new ArrayList<Deck>();
+	private int roundsWon;
+	public Player() {
+//		this.name = name;
+//		cardsArray = new ArrayList<Deck>();
+	}
+	public ArrayList<Deck> getCardsArray() {
 		return cardsArray;
 	}
-
-	public void setCardsArray(ArrayList<Card> cardsArray) {
+	public int getRoundsWon() {
+		return roundsWon;
+	}
+	public void addRound() {
+		roundsWon++;
+	}
+	public void setCardsArray(ArrayList<Deck> cardsArray) {
 		this.cardsArray = cardsArray;
 	}
 
-	protected int roundsWons;
-	protected ArrayList<Card> cardsArray = new ArrayList<Card>();
+//	protected int roundsWons;
+//	protected ArrayList<Card> cardsArray = new ArrayList<Card>();
 
 	
-	public Player() {
-		
-	}
 
-	public String getPlayerStatus() {
-		return playerStatus;
-	}
 
-	public int getRoundsWons() {
-		return roundsWons;
-	}
+//	public String getPlayerStatus() {
+//		return playerStatus;
+//	}
 
-	public void addRound() {
-		roundsWons++;
-	}
+	
+//	attributes of the player class
+//	protected String playerStatus;	
 
 }
